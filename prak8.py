@@ -70,3 +70,7 @@ def on_enter(e):
     btn_submit["bg"] = "#50afa7"
     btn_submit["fg"] = "black"
 
+def on_leave(e):
+    btn_submit["bg"] = "#44475a"
+    btn_submit["fg"] = "black"
+
