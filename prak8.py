@@ -23,3 +23,5 @@ def create_db():
 
 
 create_db()
+
+def prediksi_fakultas(biologi, fisika, inggris):
