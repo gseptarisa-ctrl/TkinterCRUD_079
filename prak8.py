@@ -74,3 +74,52 @@ def on_leave(e):
     btn_submit["bg"] = "#44475a"
     btn_submit["fg"] = "black"
 
+#jendela utama
+root = tk.Tk()
+root.title("Prediksi Fakultas Berdasarkan Nilai Siswa")
+root.geometry("400x300")
+root.configure(bg="#FFC0CB")
+
+#judul apk
+tk.Label(
+    root,
+    text="Prediksi Fakultas Siswa",
+    font=("Arial", 16, "bold"),
+    bg="#f0f0f0"
+).pack(pady=15)
+
+#entry nama siswa
+tk.Label(root, text="Nama Siswa").pack()
+entry_nama = tk.Entry(root, width=30)
+entry_nama.pack(pady=5)
+
+#entry nilai biologi
+tk.Label(root, text="Nilai Biologi").pack()
+entry_bio = tk.Entry(root, width=30)
+entry_bio.pack(pady=5)
+
+#entry nilai fisika
+tk.Label(root, text="Nilai Fisika").pack()
+entry_fis = tk.Entry(root, width=30)
+entry_fis.pack(pady=5)
+
+#entry nilai bahasa inggris
+tk.Label(root, text="Nilai Bahasa Inggris").pack()
+entry_ing = tk.Entry(root, width=30)
+entry_ing.pack(pady=5)
+
+#tombol submit
+btn_submit = tk.Button(
+    root,
+    text="Submit Nilai",
+    bg="#44475a",
+    fg="black",
+    command=submit_nilai
+)
+btn_submit.pack(pady=15)
+
+btn_submit.bind("<Enter>", on_enter)
+btn_submit.bind("<Leave>", on_leave)
+
+# Menjalankan aplikasi
+root.mainloop()
