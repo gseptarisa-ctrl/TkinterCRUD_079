@@ -47,4 +47,14 @@ def submit_nilai():
     if not nama:
         messagebox.showerror("Error", "Nama siswa tidak boleh kosong")
         return
-        
+
+    hasil_prediksi = prediksi_fakultas(bio, fis, ing)
+
+    conn = sqlite3.connect("nilai_siswa.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO nilai_siswa (nama_siswa, biologi, fisika, inggris, prediksi_fakultas)
+        VALUES (?, ?, ?, ?, ?)
+    """, (nama, bio, fis, ing, hasil_prediksi))
+    conn.commit()
+    conn.close()
